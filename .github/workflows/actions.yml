@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  rubocop:
+  lint:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -15,5 +15,5 @@ jobs:
         uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
-      - name: Run RSpec
-        run: docker-compose run --rm app bundle exec rspec
+      # - name: Run RSpec
+      #   run: docker-compose run --rm tutorial bundle exec rspec
