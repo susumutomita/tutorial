@@ -15,5 +15,5 @@ jobs:
       - name: Run rubocop
         run: |
           id=`docker ps | grep "tutorial-web" | awk '{print $1}'`
-          docker-compose up
+          docker-compose up -d
           docker exec -it ${id} "bundle exec rubocop"
