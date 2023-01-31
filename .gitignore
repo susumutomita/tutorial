@@ -11,7 +11,11 @@
 /tmp/
 log/development.log
 log/test.log
-db/test.sqlite3
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-*
+
 # Used by dotenv library to load environment variables.
 .env
 
