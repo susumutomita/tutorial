@@ -13,3 +13,6 @@ jobs:
 
       - name: lint
         run : docker-compose run web rubocop
+
+      - name: test
+        run : docker-compose run web rails test
