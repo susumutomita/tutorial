@@ -73,6 +73,8 @@ group :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'guard',                    '2.16.2'
+  gem 'guard-minitest',           '2.4.4'
 end
 
 group :production do
