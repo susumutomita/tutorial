@@ -11,24 +11,23 @@
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
 Bundler/DuplicatedGem:
   Exclude:
-    - 'Gemfile'
-
+    - "Gemfile"
+    - "Guardfile"
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: TreatCommentsAsGroupSeparators, ConsiderPunctuation, Include.
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
 Bundler/OrderedGems:
   Exclude:
-    - 'Gemfile'
-
+    - "Gemfile"
+    - "Guardfile"
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: around, only_before
 Layout/EmptyLinesAroundAccessModifier:
   Exclude:
-    - 'app/controllers/microposts_controller.rb'
-    - 'app/controllers/users_controller.rb'
+    - "app/controllers/users_controller.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
@@ -36,31 +35,31 @@ Layout/EmptyLinesAroundAccessModifier:
 # SupportedStyles: empty_lines, no_empty_lines
 Layout/EmptyLinesAroundBlockBody:
   Exclude:
-    - 'db/schema.rb'
+    - "db/schema.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: AllowForAlignment, AllowBeforeTrailingComments, ForceEqualSignAlignment.
 Layout/ExtraSpacing:
   Exclude:
-    - 'Gemfile'
-
+    - "Gemfile"
+    - "Guardfile"
 # Offense count: 4
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: normal, indented_internal_methods
 Layout/IndentationConsistency:
   Exclude:
-    - 'app/controllers/microposts_controller.rb'
-    - 'app/controllers/users_controller.rb'
+    - "app/controllers/microposts_controller.rb"
+    - "app/controllers/users_controller.rb"
 
 # Offense count: 4
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: Width, AllowedPatterns, IgnoredPatterns.
 Layout/IndentationWidth:
   Exclude:
-    - 'app/controllers/microposts_controller.rb'
-    - 'app/controllers/users_controller.rb'
+    - "app/controllers/microposts_controller.rb"
+    - "app/controllers/users_controller.rb"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -69,46 +68,46 @@ Layout/IndentationWidth:
 # SupportedStylesForEmptyBrackets: space, no_space
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
-    - 'config/environments/production.rb'
+    - "config/environments/production.rb"
 
 # Offense count: 8
 # This cop supports safe autocorrection (--autocorrect).
 Layout/SpaceInsidePercentLiteralDelimiters:
   Exclude:
-    - 'Gemfile'
-    - 'app/controllers/microposts_controller.rb'
-    - 'app/controllers/users_controller.rb'
-
+    - "Gemfile"
+    - "app/controllers/microposts_controller.rb"
+    - "app/controllers/users_controller.rb"
+    - "Guardfile"
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'test/channels/application_cable/connection_test.rb'
-    - 'test/test_helper.rb'
+    - "test/channels/application_cable/connection_test.rb"
+    - "test/test_helper.rb"
 
 # Offense count: 15
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
   Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/microposts_controller.rb'
-    - 'app/controllers/static_pages_controller.rb'
-    - 'app/controllers/users_controller.rb'
-    - 'app/helpers/application_helper.rb'
-    - 'app/helpers/microposts_helper.rb'
-    - 'app/helpers/static_pages_helper.rb'
-    - 'app/helpers/users_helper.rb'
-    - 'app/mailers/application_mailer.rb'
-    - 'app/models/application_record.rb'
-    - 'app/models/micropost.rb'
-    - 'app/models/user.rb'
-    - 'config/application.rb'
-    - 'db/migrate/20230131012114_create_users.rb'
-    - 'db/migrate/20230131012708_create_microposts.rb'
+    - "spec/**/*"
+    - "test/**/*"
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/microposts_controller.rb"
+    - "app/controllers/static_pages_controller.rb"
+    - "app/controllers/users_controller.rb"
+    - "app/helpers/application_helper.rb"
+    - "app/helpers/microposts_helper.rb"
+    - "app/helpers/static_pages_helper.rb"
+    - "app/helpers/users_helper.rb"
+    - "app/mailers/application_mailer.rb"
+    - "app/models/application_record.rb"
+    - "app/models/micropost.rb"
+    - "app/models/user.rb"
+    - "config/application.rb"
+    - "db/migrate/20230131012114_create_users.rb"
+    - "db/migrate/20230131012708_create_microposts.rb"
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
@@ -116,9 +115,9 @@ Style/Documentation:
 # SupportedStyles: compact, expanded
 Style/EmptyMethod:
   Exclude:
-    - 'app/controllers/microposts_controller.rb'
-    - 'app/controllers/static_pages_controller.rb'
-    - 'app/controllers/users_controller.rb'
+    - "app/controllers/microposts_controller.rb"
+    - "app/controllers/static_pages_controller.rb"
+    - "app/controllers/users_controller.rb"
 
 # Offense count: 54
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -131,21 +130,21 @@ Style/FrozenStringLiteralComment:
 # This cop supports unsafe autocorrection (--autocorrect-all).
 Style/GlobalStdStream:
   Exclude:
-    - 'config/environments/production.rb'
+    - "config/environments/production.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: MinDigits, Strict, AllowedNumbers, AllowedPatterns.
 Style/NumericLiterals:
   Exclude:
-    - 'db/schema.rb'
+    - "db/schema.rb"
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: SafeForConstants.
 Style/RedundantFetchBlock:
   Exclude:
-    - 'config/puma.rb'
+    - "config/puma.rb"
 
 # Offense count: 173
 # This cop supports safe autocorrection (--autocorrect).
@@ -161,3 +160,7 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: percent
   MinSize: 10
+
+Metrics/BlockLength:
+  Exclude:
+    - "Guardfile"
