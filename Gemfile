@@ -57,7 +57,10 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console", "4.2.0"
+  gem 'web-console',           '3.5.1'
+  gem 'listen'
+  gem 'spring',                '2.0.2'
+  gem 'spring-watcher-listen', '2.0.1'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -73,6 +76,9 @@ group :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rails-controller-testing'
+  gem 'minitest'
+  gem 'minitest-reporters'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.4'
 end

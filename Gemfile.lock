@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    ansi (1.5.0)
     ast (2.4.2)
     bindex (0.8.1)
     bootsnap (1.12.0)
@@ -137,6 +138,11 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.17.0)
+    minitest-reporters (1.5.0)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     msgpack (1.6.0)
     nenv (0.3.0)
     net-imap (0.3.4)
@@ -182,6 +188,10 @@ GEM
       activesupport (= 7.0.4.1)
       bundler (>= 1.15.0)
       railties (= 7.0.4.1)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -240,6 +250,11 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     shellany (0.0.1)
+    spring (2.0.2)
+      activesupport (>= 4.2)
+    spring-watcher-listen (2.0.1)
+      listen (>= 2.7, < 4.0)
+      spring (>= 1.2, < 3.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -260,11 +275,11 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
-    web-console (4.2.0)
-      actionview (>= 6.0.0)
-      activemodel (>= 6.0.0)
+    web-console (3.5.1)
+      actionview (>= 5.0)
+      activemodel (>= 5.0)
       bindex (>= 0.4.0)
-      railties (>= 6.0.0)
+      railties (>= 5.0)
     webdrivers (5.0.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
@@ -288,20 +303,26 @@ DEPENDENCIES
   guard-minitest (= 2.4.4)
   importmap-rails (= 1.1.0)
   jbuilder (= 2.11.5)
+  listen
+  minitest
+  minitest-reporters
   pg (= 1.3.5)
   puma (= 5.6.4)
   rails (~> 7.0.4, >= 7.0.4.1)
+  rails-controller-testing
   rubocop
   rubocop-rails
   rubocop-rspec
   sassc-rails (= 2.1.2)
   selenium-webdriver (= 4.2.0)
+  spring (= 2.0.2)
+  spring-watcher-listen (= 2.0.1)
   sprockets-rails (= 3.4.2)
   sqlite3
   stimulus-rails (= 1.0.4)
   turbo-rails (= 1.1.1)
   tzinfo-data
-  web-console (= 4.2.0)
+  web-console (= 3.5.1)
   webdrivers (= 5.0.0)
 
 RUBY VERSION
