@@ -70,9 +70,14 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ansi (1.5.0)
     ast (2.4.2)
+    autoprefixer-rails (10.4.7.0)
+      execjs (~> 2)
     bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -92,6 +97,7 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    execjs (2.8.1)
     ffi (1.15.5)
     formatador (1.1.0)
     globalid (1.0.1)
@@ -236,6 +242,11 @@ GEM
       rubocop-capybara (~> 2.17)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -297,6 +308,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (= 1.12.0)
+  bootstrap-sass (= 3.3.7)
   capybara (= 3.37.1)
   debug
   guard (= 2.16.2)
