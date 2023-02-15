@@ -6,6 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all',
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
     <%# <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
     <!--[if lt IE 9]>
@@ -15,6 +16,7 @@
   </head>
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
+      <%= render 'layouts/header' %>
       <div class="container">
         <%= link_to "sample app", '#', id: "logo" %>
         <nav>
@@ -28,6 +30,7 @@
     </header>
     <div class="container">
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>
