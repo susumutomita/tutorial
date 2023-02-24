@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Users テーブルにユニーク属性を追加するためのマイグレーション
 class AddIndexToUsersEmail < ActiveRecord::Migration[7.0]
   def change
     add_index :users, :email, unique: true
