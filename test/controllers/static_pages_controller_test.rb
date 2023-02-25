@@ -1,5 +1,6 @@
 require "test_helper"
 
+# Comment here
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @base_title = "Ruby on Rails Tutorial Sample App"

@@ -57,6 +57,10 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'pre-commit'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
   gem 'web-console',           '3.5.1'
   gem 'listen'
   gem 'spring',                '2.0.2'
@@ -73,9 +77,6 @@ group :test do
   gem "capybara",           "3.37.1"
   gem "selenium-webdriver", "4.2.0"
   gem "webdrivers",         "5.0.0"
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
   gem 'rails-controller-testing'
   gem 'minitest'
   gem 'minitest-reporters'

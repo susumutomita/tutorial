@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Comment here
 class ApplicationHelperTest < ActionView::TestCase
   test "full title helper" do
     assert_equal full_title, "Ruby on Rails Tutorial Sample App"

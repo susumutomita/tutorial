@@ -1,5 +1,6 @@
 require "application_system_test_case"
 
+# Micropost test cases
 class MicropostsTest < ApplicationSystemTestCase
   setup do
     @micropost = microposts(:one)
