@@ -61,6 +61,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'brakeman'
   gem 'web-console',           '3.5.1'
   gem 'listen'
   gem 'spring',                '2.0.2'

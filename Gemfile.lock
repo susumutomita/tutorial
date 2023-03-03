@@ -79,6 +79,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    brakeman (5.4.1)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -314,6 +315,7 @@ DEPENDENCIES
   bcrypt (= 3.1.12)
   bootsnap (= 1.12.0)
   bootstrap-sass (= 3.3.7)
+  brakeman
   capybara (= 3.37.1)
   debug
   guard (= 2.16.2)

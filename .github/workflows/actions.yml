@@ -11,8 +11,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: lint
+      - name: rubocop
         run : docker-compose run web rubocop
+
+      - name: brakeman
+        run : docker-compose run web brakeman
 
       - name: test
         run : docker-compose run web rake test
