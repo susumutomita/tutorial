@@ -13,7 +13,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_template 'users/new'
     assert_select 'form[action="/signup"]' do
       assert_select 'div#error_explanation' do
-        assert_select 'div.alert', text: 'The form contains 4 errors.'
+        assert_select 'div.alert.alert-danger', text: 'The form contains 4 errors.'
         assert_select 'li', count: 4
         assert_select 'li', text: 'Name can\'t be blank'
         assert_select 'li', text: 'Email is invalid'
