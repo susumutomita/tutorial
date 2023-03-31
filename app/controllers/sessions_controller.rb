@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if valid_user?(user)
       handle_valid_user(user)
-      redirect_back_or user
     else
       handle_invalid_user
     end
@@ -26,7 +25,7 @@ class SessionsController < ApplicationController
   def handle_valid_user(user)
     log_in user
     remember_or_forget_user(user)
-    redirect_to user
+    redirect_back_or user
   end
 
   def handle_invalid_user
