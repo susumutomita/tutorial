@@ -7,6 +7,7 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.4", ">= 7.0.4.1"
 gem 'bootstrap-sass', '3.3.7'
 gem "sassc-rails",     "2.1.2"
+gem 'faker',           '2.18.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails", "3.4.2"
