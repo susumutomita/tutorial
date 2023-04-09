@@ -4,7 +4,7 @@
   <title><%= full_title(yield(:title)) %></title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
-  <%= javascript_importmap_tags %>
+  <%= javascript_importmap_tags "application" %>
   <%= render 'layouts/shim' %>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
