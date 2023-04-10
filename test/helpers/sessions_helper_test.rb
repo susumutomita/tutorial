@@ -4,6 +4,13 @@ require 'test_helper'
 class SessionsHelperTest < ActionView::TestCase
   def setup
     @user = users(:michael)
+    @user2 = users(:archer)
+  end
+
+  test "debug test logged_in" do
+    remember(@user2)
+    assert_equal @user2, current_user
+    assert logged_in?
   end
 
   test "current_user returns right user when session is nil" do

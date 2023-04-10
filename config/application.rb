@@ -10,7 +10,6 @@ module Myapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    config.session_store :cache_store
 
     # Configuration for the application, engines, and railties goes here.
     #
