@@ -5,7 +5,11 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if valid_user?(user)
-      handle_valid_user(user)
+      if user.activated?
+        handle_valid_user(user)
+      else
+        handle_unactivated_user
+      end
     else
       handle_invalid_user
     end
@@ -26,6 +30,13 @@ class SessionsController < ApplicationController
     log_in user
     remember_or_forget_user(user)
     redirect_back_or user
+  end
+
+  def handle_unactivated_user
+    message  = "Account not activated. "
+    message += "Check your email for the activation link."
+    flash[:warning] = message
+    redirect_to root_url
   end
 
   def handle_invalid_user

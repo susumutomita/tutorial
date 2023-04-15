@@ -1,60 +1,60 @@
 # sessions
 module SessionsHelper
-  # 渡されたユーザーでログインする
+  # Log in the given user
   def log_in(user)
     session[:user_id] = user.id
   end
 
-  # ユーザーのセッションを永続的にする
+  # Remember a user in a persistent session
   def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
   end
 
-  # 渡されたユーザーがログイン済みユーザーであればtrueを返す
+  # Return true if the given user is the current user
   def current_user?(user)
     user == current_user
   end
 
-  # 記憶トークンcookieに対応するユーザーを返す
+  # Return the user corresponding to the remember token cookie
   def current_user
-    # check for user_id in session
     if (user_id = session[:user_id])
       User.find_by(id: user_id)
-    # check for user_id in cookies
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
-      # check if the user is authenticated and return user
-      user if user&.authenticated?(cookies[:remember_token])
+      if user&.authenticated?(:remember, cookies[:remember_token])
+        log_in user
+        user
+      end
     end
   end
 
-  # ユーザーがログインしていればtrue、その他ならfalseを返す
+  # Return true if the user is logged in, false otherwise
   def logged_in?
     current_user.present?
   end
 
-  # 現在のユーザーをログアウトする
+  # Log out the current user
   def log_out
     forget(current_user)
     session.delete(:user_id)
   end
 
-  # 永続的セッションを破棄する
+  # Forget a persistent session
   def forget(user)
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
 
-  # 記憶したURL (もしくはデフォルト値) にリダイレクト
+  # Redirect to the stored URL (or to the default URL)
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
   end
 
-  # アクセスしようとしたURLを覚えておく
+  # Store the URL the user is trying to access
   def store_location
     session[:forwarding_url] = request.original_url if request.get? || request.head?
   end
