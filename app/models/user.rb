@@ -44,7 +44,6 @@ class User < ApplicationRecord
   end
 
   # アカウントを有効にする
-  # アカウントを有効にする
   def activate
     update(activated: true, activated_at: Time.zone.now)
   end
