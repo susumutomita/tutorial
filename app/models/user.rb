@@ -1,6 +1,6 @@
 # User class
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
 
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -53,10 +53,23 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  # パスワード再設定の属性を設定する
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
+  end
+
+  # パスワード再設定のメールを送信する
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
   # ユーザーのログイン情報を破棄する
   def forget
     update(remember_digest: nil)
   end
+
+  private
 
   # メールアドレスをすべて小文字にする
   def downcase_email
