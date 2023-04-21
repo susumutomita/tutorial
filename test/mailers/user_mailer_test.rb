@@ -16,9 +16,10 @@ class UserMailerTest < ActionMailer::TestCase
   end
 
   test "password_reset" do
-    mail = UserMailer.password_reset
+    user = @user # テスト用のユーザーを取得
+    mail = UserMailer.password_reset(user)
     assert_equal "Password reset", mail.subject
-    assert_equal ["to@example.org"], mail.to
+    assert_equal ["michael@example.com"], mail.to
     assert_equal ["noreply@example.com"], mail.from
     assert_match "Hi", mail.body.encoded
   end
