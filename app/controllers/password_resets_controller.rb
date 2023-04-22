@@ -1,5 +1,9 @@
 #  Pass word rests controller
 class PasswordResetsController < ApplicationController
+  before_action :user,         only: [:edit, :update]
+  before_action :valid_user,       only: [:edit, :update]
+  before_action :check_expiration, only: [:edit, :update] # (1) への対応
+
   def new; end
 
   def create
@@ -16,4 +20,45 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit; end
+
+  def update
+    if params[:user][:password].empty? # (3) への対応
+      @user.errors.add(:password, :blank)
+      render 'edit'
+    elsif @user.update(user_params) # (4) への対応
+      log_in @user
+      flash[:success] = "Password has been reset."
+      redirect_to @user
+    else
+      render 'edit' # (2) への対応
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:password, :password_confirmation)
+  end
+
+  # beforeフィルタ
+  # get_userはエラーになった
+  def user
+    @user = User.find_by(email: params[:email])
+  end
+
+  # 有効なユーザーかどうか確認する
+  def valid_user
+    unless @user&.activated? &&
+           @user&.authenticated?(:reset, params[:id])
+      redirect_to root_url
+    end
+  end
+
+  # トークンが期限切れかどうか確認する
+  def check_expiration
+    return unless @user.password_reset_expired?
+
+    flash[:danger] = "Password reset has expired."
+    redirect_to new_password_reset_url
+  end
 end

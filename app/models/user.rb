@@ -69,6 +69,10 @@ class User < ApplicationRecord
     update(remember_digest: nil)
   end
 
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
   private
 
   # メールアドレスをすべて小文字にする
