@@ -1,8 +1,8 @@
 #  Pass word rests controller
 class PasswordResetsController < ApplicationController
-  before_action :user,         only: [:edit, :update]
-  before_action :valid_user,       only: [:edit, :update]
-  before_action :check_expiration, only: [:edit, :update] # (1) への対応
+  before_action :set_user, only: [:edit, :update]
+  before_action :valid_user, only: [:edit, :update]
+  before_action :check_expiration, only: [:edit, :update]
 
   def new; end
 
@@ -22,15 +22,12 @@ class PasswordResetsController < ApplicationController
   def edit; end
 
   def update
-    if params[:user][:password].empty? # (3) への対応
-      @user.errors.add(:password, :blank)
-      render 'edit'
-    elsif @user.update(user_params) # (4) への対応
-      log_in @user
-      flash[:success] = "Password has been reset."
-      redirect_to @user
+    if params[:user][:password].empty?
+      handle_empty_password
+    elsif @user.update(user_params)
+      handle_successful_update
     else
-      render 'edit' # (2) への対応
+      render 'edit'
     end
   end
 
@@ -60,5 +57,21 @@ class PasswordResetsController < ApplicationController
 
     flash[:danger] = "Password reset has expired."
     redirect_to new_password_reset_url
+  end
+
+  def set_user
+    @user = User.find_by(email: params[:email])
+  end
+
+  def handle_empty_password
+    @user.errors.add(:password, :blank)
+    render 'edit'
+  end
+
+  def handle_successful_update
+    log_in @user
+    @user.update(reset_digest: nil)
+    flash[:success] = "Password has been reset."
+    redirect_to @user
   end
 end
