@@ -5,7 +5,7 @@
 # which represents the name of the model that the Micropost class belongs to.
 class Micropost < ApplicationRecord
   belongs_to :user
-  belongs_to :user
+  default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
 end
