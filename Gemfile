@@ -10,6 +10,8 @@ gem "sassc-rails",     "2.1.2"
 gem 'faker',           '2.18.0'
 gem 'will_paginate',  '3.3.0'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails", "3.4.2"
@@ -91,4 +93,5 @@ end
 
 group :production do
   gem "pg", "1.3.5"
+  gem 'fog'
 end
