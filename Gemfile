@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.4", ">= 7.0.4.1"
+gem "rails", "~> 7.0.5", ">= 7.0.5.1"
 gem 'bootstrap-sass', '3.3.7'
 gem "sassc-rails",     "2.1.2"
 gem 'faker',           '2.18.0'
@@ -23,13 +23,13 @@ gem "sqlite3"
 gem "puma",            "5.6.4"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails", "1.1.0"
+gem "importmap-rails", "1.1.1"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails",     "1.1.1"
+gem "turbo-rails", "1.3.0"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails",  "1.0.4"
+gem "stimulus-rails", "1.1.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder",        "2.11.5"
@@ -68,7 +68,7 @@ group :development do
   gem 'rubocop-rspec', require: false
   gem 'rspec'
   gem 'brakeman'
-  gem 'web-console',           '3.5.1'
+  gem 'web-console', '3.6.0'
   gem 'listen'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
